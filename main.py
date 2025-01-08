@@ -71,3 +71,4 @@ with open('Files for Problem 3/3.txt', encoding='utf-8') as text_file_three:
     data_three = text_file_three.read()
     new_line = data.split('\n')
     print(data_three)
+
