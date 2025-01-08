@@ -49,9 +49,6 @@ def get_shop_list_by_dishes(dishes, person_count):
                     dishes_list[ingredients_name] = {'measure': ingredient['measure'], 'quantity': quantity}
                 else:
                     dishes_list[ingredients_name]['quantity'] += quantity
-
-
-
     return dishes_list
 #result_two = get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
 result_two = get_shop_list_by_dishes(['Запеченный картофель', 'Запеченный картофель'], 2)
@@ -75,7 +72,6 @@ def print_result(list_with_files):
     return final_result
 
 
-
 directory = 'Files for Problem 3'
 file_one = '1.txt'
 file_two = '2.txt'
@@ -83,13 +79,10 @@ file_three = '3.txt'
 file_one_read = open_file(directory + '/' + file_one)
 file_two_read = open_file(directory + '/' + file_two)
 file_three_read = open_file(directory + '/' + file_three)
-
 list_of_items = [(file_one, file_one_read, len(file_one_read)),
     (file_two, file_two_read, len(file_two_read)),
     (file_three, file_three_read, len(file_three_read))] # filing list with data
 list_sorted = sorted(list_of_items, key=lambda x: x[2])
-
-
 
 #print(file_one_read)
 #print(file_two_read)
