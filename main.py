@@ -89,5 +89,5 @@ list_sorted = sorted(list_of_items, key=lambda x: x[2])
 #print(file_three_read)
 #print(list_sorted)
 output = print_result(list_sorted)
-#print(output)
+print(output)
 
