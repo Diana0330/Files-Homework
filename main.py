@@ -58,17 +58,43 @@ result_two = get_shop_list_by_dishes(['Запеченный картофель',
 print(result_two)
 
 # Problem 3
+def open_file(path):
+    with open(path, encoding ='utf-8') as text_file:
+        data = text_file.read()
+        new_line = data.strip().split('\n')
+        return new_line
 
-with open('Files for Problem 3/1.txt', encoding = 'utf-8') as text_file:
-    data = text_file.read()
-    new_line = data.split('\n')
-    print(data)
-with open('Files for Problem 3/2.txt', encoding='utf-8') as text_file_two:
-    data_two = text_file_two.read()
-    new_line = data.split('\n')
-    print(data_two)
-with open('Files for Problem 3/3.txt', encoding='utf-8') as text_file_three:
-    data_three = text_file_three.read()
-    new_line = data.split('\n')
-    print(data_three)
+
+def print_result(list_with_files):
+
+    final_result = ''
+    for line in list_with_files:
+        final_result += f'{line[0]}\n'
+        final_result += f'{line[2]}\n'
+        final_result += f'{'\n'.join(line[1])}\n'
+    return final_result
+
+
+
+directory = 'Files for Problem 3'
+file_one = '1.txt'
+file_two = '2.txt'
+file_three = '3.txt'
+file_one_read = open_file(directory + '/' + file_one)
+file_two_read = open_file(directory + '/' + file_two)
+file_three_read = open_file(directory + '/' + file_three)
+
+list_of_items = [(file_one, file_one_read, len(file_one_read)),
+    (file_two, file_two_read, len(file_two_read)),
+    (file_three, file_three_read, len(file_three_read))] # filing list with data
+list_sorted = sorted(list_of_items, key=lambda x: x[2])
+
+
+
+#print(file_one_read)
+#print(file_two_read)
+#print(file_three_read)
+#print(list_sorted)
+output = print_result(list_sorted)
+#print(output)
 
